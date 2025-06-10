@@ -1,6 +1,7 @@
 services:
   mysql:
     image: mysql:8.0
+    container_name: base_mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ry-vue
@@ -13,6 +14,7 @@ services:
 
   redis:
     image: redis:6.2
+    container_name: base_redis
     ports:
       - "6379:6379"
     volumes:
@@ -21,6 +23,7 @@ services:
       - ruoyi-net
 
   ruoyi-admin:
+    container_name: base_jar
     build:
       context: ./ruoyi-admin
     ports:
