@@ -26,6 +26,8 @@ services:
     container_name: base_jar
     build:
       context: ./ruoyi-admin
+    volumes:
+      - /home/dockerfile/java/manniu_base/project_app:/app
     ports:
       - "8081:8081"
     depends_on:
